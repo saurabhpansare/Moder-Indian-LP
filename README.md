@@ -255,4 +255,5 @@ Outputs optimized static assets in `/client/dist/`.
 ## 📄 Licensing & Copyright
 © Modern Estates India Private Limited. All Rights Reserved.
 #   M o d e r - I n d i a n - L P  
+ #   M o d e r - I n d i a n - L P  
  
