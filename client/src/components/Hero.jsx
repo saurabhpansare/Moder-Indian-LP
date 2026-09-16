@@ -41,6 +41,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-eyebrow-box"
             style={styles.eyebrowBox}
           >
             <div style={styles.badgePill}>
@@ -71,7 +72,7 @@ const Hero = () => {
           >
             <p style={styles.supportingCopy}>{projectMeta.subheadline}</p>
 
-            <div style={styles.ctaGroup}>
+            <div className="hero-cta-group" style={styles.ctaGroup}>
               <a href="#project-intro" onClick={scrollToIntro} className="btn-primary">
                 EXPLORE THE PROJECT
               </a>
@@ -86,6 +87,7 @@ const Hero = () => {
 
       {/* Animated Scroll Indicator */}
       <motion.div
+        className="hero-scroll-indicator"
         style={{ ...styles.scrollIndicator, opacity: opacityFade }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -109,8 +111,7 @@ const styles = {
   heroSection: {
     position: 'relative',
     width: '100%',
-    minHeight: '100vh',
-    height: '100svh',
+    minHeight: '100dvh',
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',

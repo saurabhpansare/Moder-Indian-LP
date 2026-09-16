@@ -65,7 +65,7 @@ const Navbar = () => {
           </a>
 
           {/* CENTER: Navigation Links (Desktop) */}
-          <nav style={styles.desktopNav} aria-label="Main Navigation">
+          <nav className="nav-desktop" style={styles.desktopNav} aria-label="Main Navigation">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -79,7 +79,7 @@ const Navbar = () => {
           </nav>
 
           {/* RIGHT: CTA Button (Desktop) */}
-          <div style={styles.desktopCTA}>
+          <div className="nav-desktop-cta" style={styles.desktopCTA}>
             <a
               href="#enquire"
               onClick={(e) => scrollToSection(e, '#enquire')}
@@ -93,6 +93,7 @@ const Navbar = () => {
 
           {/* Mobile Hamburger Toggle */}
           <button
+            className="nav-hamburger-btn"
             style={styles.hamburgerBtn}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
@@ -198,12 +199,7 @@ const styles = {
     color: '#c5a880',
   },
   desktopNav: {
-    display: 'flex',
-    alignItems: 'center',
     gap: '2.5rem',
-    '@media (maxWidth: 1024px)': {
-      display: 'none',
-    },
   },
   navLink: {
     fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -213,12 +209,8 @@ const styles = {
     color: '#9c9992',
     transition: 'color 0.3s ease',
     textTransform: 'uppercase',
-    '&:hover': {
-      color: '#c5a880',
-    },
   },
   desktopCTA: {
-    display: 'flex',
     alignItems: 'center',
   },
   enquireBtn: {
@@ -226,7 +218,6 @@ const styles = {
     fontSize: '0.75rem',
   },
   hamburgerBtn: {
-    display: 'none',
     padding: '0.5rem',
     background: 'none',
     border: 'none',
@@ -237,13 +228,14 @@ const styles = {
     top: 0,
     left: 0,
     width: '100vw',
-    height: '100vh',
+    height: '100dvh',
     backgroundColor: '#08080a',
     zIndex: 999,
     padding: '2rem 1.5rem',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    overflowY: 'auto',
   },
   mobileHeader: {
     display: 'flex',

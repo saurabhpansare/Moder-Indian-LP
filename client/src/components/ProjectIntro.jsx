@@ -13,13 +13,14 @@ const ProjectIntro = () => {
   return (
     <section id="project-intro" style={styles.section}>
       <div className="container">
-        <div style={styles.grid}>
+        <div className="intro-grid" style={styles.grid}>
           {/* LEFT: Eyebrow & Large Editorial Heading */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
+            className="intro-left-col"
             style={styles.leftCol}
           >
             <span className="subheading-gold">{projectMeta.name}</span>
@@ -34,6 +35,7 @@ const ProjectIntro = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="intro-right-col"
             style={styles.rightCol}
           >
             <div style={styles.textStack}>
@@ -69,24 +71,12 @@ const styles = {
     borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
   },
   grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gap: '3rem',
     alignItems: 'start',
   },
   leftCol: {
-    gridColumn: 'span 6',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   rightCol: {
-    gridColumn: 'span 6',
     paddingTop: '2.5rem',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-      paddingTop: 0,
-    },
   },
   heading: {
     color: '#f4f1ea',

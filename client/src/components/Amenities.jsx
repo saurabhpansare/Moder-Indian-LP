@@ -23,9 +23,9 @@ const Amenities = () => {
         </motion.div>
 
         {/* Editorial Layout: Left List (60%), Right Dynamic Image Preview (40%) */}
-        <div style={styles.contentGrid}>
+        <div className="amenities-content-grid" style={styles.contentGrid}>
           {/* LEFT: Numbered Rows List */}
-          <div style={styles.listContainer}>
+          <div className="amenities-list-container" style={styles.listContainer}>
             {buildingAmenities.map((item, idx) => {
               const isActive = activeIdx === idx;
 
@@ -34,6 +34,7 @@ const Amenities = () => {
                   key={item.number}
                   onMouseEnter={() => setActiveIdx(idx)}
                   onClick={() => setActiveIdx(idx)}
+                  className="amenity-row-responsive"
                   style={{
                     ...styles.amenityRow,
                     borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
@@ -75,9 +76,9 @@ const Amenities = () => {
             })}
           </div>
 
-          {/* RIGHT: Dynamic Image Reveal Card (Desktop) */}
-          <div style={styles.imageCol}>
-            <div style={styles.stickyContainer}>
+          {/* RIGHT: Dynamic Image Reveal Card */}
+          <div className="amenities-image-col" style={styles.imageCol}>
+            <div className="amenities-sticky-container" style={styles.stickyContainer}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIdx}
@@ -85,6 +86,7 @@ const Amenities = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.45, ease: 'easeOut' }}
+                  className="amenities-image-card"
                   style={styles.imageCard}
                 >
                   <img
@@ -131,18 +133,9 @@ const styles = {
     color: '#f4f1ea',
   },
   contentGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gap: '4rem',
     alignItems: 'start',
   },
   listContainer: {
-    gridColumn: 'span 7',
-    display: 'flex',
-    flexDirection: 'column',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   amenityRow: {
     padding: '1.5rem 1.25rem',
@@ -200,10 +193,6 @@ const styles = {
     marginTop: '0.4rem',
   },
   imageCol: {
-    gridColumn: 'span 5',
-    '@media (maxWidth: 992px)': {
-      display: 'none',
-    },
   },
   stickyContainer: {
     position: 'sticky',

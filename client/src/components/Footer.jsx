@@ -12,7 +12,7 @@ const Footer = () => {
     <footer style={styles.footer}>
       <div className="container">
         {/* Top Wordmark & Back to Top */}
-        <div style={styles.topRow}>
+        <div className="footer-top-row" style={styles.topRow}>
           <div style={styles.brandBlock}>
             <span style={styles.brandTitle}>MODERN ESTATES</span>
             <span style={styles.brandSubtitle}>
@@ -29,9 +29,9 @@ const Footer = () => {
         <div className="divider" style={{ margin: '3rem 0' }} />
 
         {/* Main Footer Links & Contact Info */}
-        <div style={styles.mainGrid}>
+        <div className="footer-main-grid" style={styles.mainGrid}>
           {/* Col 1: Modern Suites Summary */}
-          <div style={styles.gridColBig}>
+          <div className="footer-grid-col-big" style={styles.gridColBig}>
             <h4 style={styles.colTitle}>MODERN SUITES</h4>
             <p style={styles.colCopy}>
               A landmark boutique commercial development in Mahalaxmi, Mumbai. Engineered for corporate leaders and decision-makers seeking single-tenant floor exclusivity.
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
 
           {/* Col 2: Quick Links */}
-          <div style={styles.gridCol}>
+          <div className="footer-grid-col" style={styles.gridCol}>
             <h5 style={styles.colHeader}>NAVIGATION</h5>
             <ul style={styles.linkList}>
               <li><a href="#project-intro" style={styles.footerLink}>Project Intro</a></li>
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           {/* Col 3: Portfolio Projects */}
-          <div style={styles.gridCol}>
+          <div className="footer-grid-col" style={styles.gridCol}>
             <h5 style={styles.colHeader}>PORTFOLIO</h5>
             <ul style={styles.linkList}>
               <li><span style={styles.disabledLink}>Belvedere Court (1992)</span></li>
@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
 
           {/* Col 4: Corporate Info */}
-          <div style={styles.gridCol}>
+          <div className="footer-grid-col" style={styles.gridCol}>
             <h5 style={styles.colHeader}>CORPORATE HEADQUARTERS</h5>
             <address style={styles.addressBlock}>
               Modern Estates India Private Limited<br />
@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="divider" style={{ margin: '3rem 0 2rem 0' }} />
 
         {/* Bottom Legal Copyright */}
-        <div style={styles.bottomRow}>
+        <div className="footer-bottom-row" style={styles.bottomRow}>
           <p style={styles.copyrightText}>
             © {new Date().getFullYear()} Modern Estates India Private Limited. All Rights Reserved.
           </p>
@@ -103,11 +103,6 @@ const styles = {
     borderTop: '1px solid rgba(197, 168, 128, 0.2)',
   },
   topRow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    flexWrap: 'wrap',
-    gap: '2rem',
   },
   brandBlock: {
     display: 'flex',
@@ -145,30 +140,16 @@ const styles = {
     color: '#c5a880',
   },
   mainGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gap: '3rem',
   },
   gridColBig: {
-    gridColumn: 'span 4',
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   gridCol: {
-    gridColumn: 'span 2.66',
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 6',
-    },
-    '@media (maxWidth: 640px)': {
-      gridColumn: 'span 12',
-    },
   },
   colTitle: {
     fontFamily: "'Syne', sans-serif",

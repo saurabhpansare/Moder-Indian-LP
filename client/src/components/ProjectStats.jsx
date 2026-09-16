@@ -21,7 +21,7 @@ const ProjectStats = () => {
         </motion.div>
 
         {/* Editorial Stats Grid */}
-        <div style={styles.statsGrid}>
+        <div className="stats-grid" style={styles.statsGrid}>
           {projectStats.map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -30,6 +30,7 @@ const ProjectStats = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: idx * 0.1 }}
               whileHover={{ y: -6, borderColor: 'rgba(197, 168, 128, 0.45)' }}
+              className="stat-card-responsive"
               style={styles.statCard}
             >
               <div style={styles.cardHeader}>
@@ -65,15 +66,6 @@ const styles = {
     color: '#f4f1ea',
   },
   statsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '2rem',
-    '@media (maxWidth: 992px)': {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-    },
-    '@media (maxWidth: 640px)': {
-      gridTemplateColumns: '1fr',
-    },
   },
   statCard: {
     backgroundColor: '#121217',

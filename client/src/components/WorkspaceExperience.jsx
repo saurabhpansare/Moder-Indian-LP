@@ -23,15 +23,16 @@ const WorkspaceExperience = () => {
         </motion.div>
 
         {/* Split Screen Block 1: Image 60% / Text 40% */}
-        <div style={styles.splitRow}>
+        <div className="workspace-split-row" style={styles.splitRow}>
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="workspace-col60"
             style={styles.col60}
           >
-            <div style={styles.imageCard}>
+            <div className="workspace-image-card" style={styles.imageCard}>
               <img
                 src={workspaceExperience.images[0]}
                 alt="Executive Workspace Interior"
@@ -49,6 +50,7 @@ const WorkspaceExperience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="workspace-col40"
             style={styles.col40}
           >
             <div style={styles.featureList}>
@@ -68,12 +70,13 @@ const WorkspaceExperience = () => {
         </div>
 
         {/* Split Screen Block 2: Text 40% / Image 60% */}
-        <div style={{ ...styles.splitRow, marginTop: '5rem' }}>
+        <div className="workspace-split-row" style={{ ...styles.splitRow, marginTop: '3rem' }}>
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="workspace-col40"
             style={styles.col40}
           >
             <div style={styles.featureList}>
@@ -96,9 +99,10 @@ const WorkspaceExperience = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="workspace-col60"
             style={styles.col60}
           >
-            <div style={styles.imageCard}>
+            <div className="workspace-image-card" style={styles.imageCard}>
               <img
                 src={workspaceExperience.images[1]}
                 alt="Executive Private Balcony & View"
@@ -135,31 +139,17 @@ const styles = {
     color: '#9c9992',
   },
   splitRow: {
-    display: 'flex',
     alignItems: 'center',
-    gap: '4rem',
-    '@media (maxWidth: 992px)': {
-      flexDirection: 'column !important',
-      gap: '2.5rem',
-    },
   },
   col60: {
-    flex: '1 1 60%',
-    width: '100%',
   },
   col40: {
-    flex: '1 1 40%',
-    width: '100%',
   },
   imageCard: {
     position: 'relative',
-    height: '460px',
     overflow: 'hidden',
     backgroundColor: '#16161c',
     border: '1px solid rgba(197, 168, 128, 0.2)',
-    '@media (maxWidth: 768px)': {
-      height: '300px',
-    },
   },
   img: {
     width: '100%',

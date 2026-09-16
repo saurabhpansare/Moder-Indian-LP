@@ -22,12 +22,13 @@ const Developer = () => {
         </motion.div>
 
         {/* Developer Bio Grid */}
-        <div style={styles.bioGrid}>
+        <div className="developer-bio-grid" style={styles.bioGrid}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="developer-bio-left"
             style={styles.bioLeft}
           >
             <p style={styles.bioText}>{developerData.bio}</p>
@@ -38,6 +39,7 @@ const Developer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="developer-bio-right"
             style={styles.bioRight}
           >
             <div style={styles.heritageBadgeCard}>
@@ -62,7 +64,7 @@ const Developer = () => {
             <h3 style={styles.projectsTitle}>SELECTED DEVELOPMENT PORTFOLIO</h3>
           </div>
 
-          <div style={styles.projectsGrid}>
+          <div className="developer-projects-grid" style={styles.projectsGrid}>
             {developerData.projects.map((proj, idx) => (
               <motion.div
                 key={proj.name}
@@ -102,16 +104,9 @@ const styles = {
     color: '#f4f1ea',
   },
   bioGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gap: '3.5rem',
     alignItems: 'center',
   },
   bioLeft: {
-    gridColumn: 'span 7',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   bioText: {
     fontSize: '1.15rem',
@@ -120,10 +115,6 @@ const styles = {
     fontWeight: 300,
   },
   bioRight: {
-    gridColumn: 'span 5',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   heritageBadgeCard: {
     backgroundColor: '#101015',
@@ -177,15 +168,6 @@ const styles = {
     marginTop: '0.4rem',
   },
   projectsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '1.75rem',
-    '@media (maxWidth: 992px)': {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-    },
-    '@media (maxWidth: 640px)': {
-      gridTemplateColumns: '1fr',
-    },
   },
   projectCard: {
     backgroundColor: '#101015',

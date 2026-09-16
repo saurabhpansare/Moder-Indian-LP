@@ -7,13 +7,14 @@ const LocationAdvantage = () => {
   return (
     <section style={styles.section}>
       <div className="container">
-        <div style={styles.grid}>
+        <div className="advantage-grid" style={styles.grid}>
           {/* LEFT: Heading & Narrative */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="advantage-left-col"
             style={styles.leftCol}
           >
             <span className="subheading-gold">STRATEGIC ADVANTAGE</span>
@@ -50,8 +51,8 @@ const LocationAdvantage = () => {
           </motion.div>
 
           {/* RIGHT: Visual Landmark Cards */}
-          <div style={styles.rightCol}>
-            <div style={styles.landmarksList}>
+          <div className="advantage-right-col" style={styles.rightCol}>
+            <div className="advantage-landmarks-grid" style={styles.landmarksList}>
               {locationData.landmarks.map((item, idx) => (
                 <motion.div
                   key={item.name}
@@ -85,25 +86,14 @@ const styles = {
     borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
   },
   grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gap: '4rem',
     alignItems: 'center',
   },
   leftCol: {
-    gridColumn: 'span 6',
     display: 'flex',
     flexDirection: 'column',
     gap: '1.5rem',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   rightCol: {
-    gridColumn: 'span 6',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   heading: {
     color: '#f4f1ea',
@@ -140,12 +130,6 @@ const styles = {
     color: '#9c9992',
   },
   landmarksList: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '1.5rem',
-    '@media (maxWidth: 640px)': {
-      gridTemplateColumns: '1fr',
-    },
   },
   landmarkCard: {
     backgroundColor: '#101015',

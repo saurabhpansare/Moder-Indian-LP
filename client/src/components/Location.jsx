@@ -27,6 +27,7 @@ const Location = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
+          className="location-map-canvas"
           style={styles.mapCanvas}
         >
           {/* Stylized Architectural Map Background Graphics */}
@@ -38,7 +39,7 @@ const Location = () => {
             <div style={styles.primeMarker}>
               <div style={styles.pulseRing} />
               <div style={styles.markerDot} />
-              <div style={styles.markerCard}>
+              <div className="prime-marker-card" style={styles.markerCard}>
                 <span style={styles.cardTag}>PROJECT ADDRESS</span>
                 <h4 style={styles.cardTitle}>MODERN SUITES</h4>
                 <p style={styles.cardSub}>Mahalaxmi, Mumbai</p>
@@ -68,7 +69,7 @@ const Location = () => {
           </div>
 
           {/* Location Key Details Bar at Bottom of Map */}
-          <div style={styles.mapLegendBar}>
+          <div className="location-legend-bar" style={styles.mapLegendBar}>
             <div style={styles.legendItem}>
               <Navigation size={18} color="#c5a880" />
               <div>
@@ -113,16 +114,12 @@ const styles = {
   },
   mapCanvas: {
     position: 'relative',
-    height: '560px',
     backgroundColor: '#0c0c10',
     border: '1px solid rgba(197, 168, 128, 0.25)',
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    '@media (maxWidth: 768px)': {
-      height: '420px',
-    },
   },
   mapGraphics: {
     position: 'relative',

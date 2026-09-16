@@ -22,7 +22,7 @@ const Architecture = () => {
         </motion.div>
 
         {/* Alternating Feature Blocks */}
-        <div style={styles.featuresStack}>
+        <div className="arch-features-stack" style={styles.featuresStack}>
           {architectureFeatures.map((feat, idx) => {
             const isEven = idx % 2 === 0;
 
@@ -33,14 +33,15 @@ const Architecture = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.9 }}
+                className="arch-feature-row"
                 style={{
                   ...styles.featureRow,
                   flexDirection: isEven ? 'row' : 'row-reverse',
                 }}
               >
                 {/* Image Block */}
-                <div style={styles.imageBlock}>
-                  <div style={styles.imageWrapper}>
+                <div className="arch-image-block" style={styles.imageBlock}>
+                  <div className="arch-image-wrapper" style={styles.imageWrapper}>
                     <img
                       src={feat.image}
                       alt={feat.title}
@@ -59,11 +60,11 @@ const Architecture = () => {
                 </div>
 
                 {/* Text Block */}
-                <div style={styles.textBlock}>
+                <div className="arch-text-block" style={styles.textBlock}>
                   <div style={styles.eyebrowLine}>
                     <span style={styles.featEyebrow}>ARCHITECTURAL FEATURE {feat.number}</span>
                   </div>
-                  <h3 style={styles.featTitle}>{feat.title}</h3>
+                  <h3 className="arch-feat-title" style={styles.featTitle}>{feat.title}</h3>
                   <p style={styles.featSummary}>{feat.summary}</p>
                   <p style={styles.featDesc}>{feat.description}</p>
 
@@ -94,33 +95,19 @@ const styles = {
     maxWidth: '800px',
   },
   featuresStack: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '7rem',
   },
   featureRow: {
     display: 'flex',
     alignItems: 'center',
-    gap: '5rem',
-    '@media (maxWidth: 992px)': {
-      flexDirection: 'column !important',
-      gap: '2.5rem',
-    },
   },
   imageBlock: {
-    flex: '1 1 55%',
     position: 'relative',
-    width: '100%',
   },
   imageWrapper: {
     position: 'relative',
     overflow: 'hidden',
-    height: '480px',
     backgroundColor: '#121217',
     border: '1px solid rgba(197, 168, 128, 0.22)',
-    '@media (maxWidth: 768px)': {
-      height: '320px',
-    },
   },
   featureImage: {
     width: '100%',

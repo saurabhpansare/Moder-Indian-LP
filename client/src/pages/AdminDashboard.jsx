@@ -191,7 +191,7 @@ const AdminDashboard = () => {
         /* MAIN ADMIN DASHBOARD CONTENT */
         <div className="container" style={styles.dashboardContainer}>
           {/* Top Admin Navigation Header */}
-          <header style={styles.dashHeader}>
+          <header className="admin-dash-header" style={styles.dashHeader}>
             <div style={styles.dashBrandGroup}>
               <span style={styles.dashBadge}>MODERN ESTATES</span>
               <h1 style={styles.dashTitle}>LEAD MANAGEMENT CONSOLE</h1>
@@ -212,7 +212,7 @@ const AdminDashboard = () => {
           </header>
 
           {/* Metrics Stats Row */}
-          <div style={styles.metricsRow}>
+          <div className="admin-metrics-row" style={styles.metricsRow}>
             <div style={styles.metricCard}>
               <span style={styles.metricLabel}>TOTAL LEADS RECEIVED</span>
               <span style={styles.metricValue}>{totalLeads}</span>
@@ -233,7 +233,7 @@ const AdminDashboard = () => {
           </div>
 
           {/* Search Toolbar & Status Filters */}
-          <div style={styles.toolbar}>
+          <div className="admin-toolbar" style={styles.toolbar}>
             {/* Status Filter Tabs */}
             <div style={styles.tabsGroup}>
               {['All', 'New', 'Contacted', 'Archived'].map((status) => (
@@ -256,7 +256,7 @@ const AdminDashboard = () => {
             </div>
 
             {/* Real-time Search Box */}
-            <div style={styles.searchBox}>
+            <div className="admin-search-box" style={styles.searchBox}>
               <Search size={16} color="#c5a880" />
               <input
                 type="text"
@@ -652,12 +652,6 @@ const styles = {
     fontSize: '0.75rem',
   },
   metricsRow: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '1.5rem',
-    '@media (maxWidth: 768px)': {
-      gridTemplateColumns: '1fr',
-    },
   },
   metricCard: {
     backgroundColor: '#101015',

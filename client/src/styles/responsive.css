@@ -1,0 +1,765 @@
+/* ==========================================================================
+   MODERN SUITES - LUXURY RESPONSIVE LAYOUT SYSTEM
+   Mobile-First & Breakpoint Utilities for All Screen Sizes
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. Global & Section Level Adjustments
+   -------------------------------------------------------------------------- */
+section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 992px) {
+  section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  .subheading-gold {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   02. Navbar & Header Navigation
+   -------------------------------------------------------------------------- */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-desktop-cta {
+  display: flex;
+  align-items: center;
+}
+
+.nav-hamburger-btn {
+  display: none;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .nav-desktop,
+  .nav-desktop-cta {
+    display: none !important;
+  }
+  .nav-hamburger-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   03. Hero Section Responsive Rules
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #08080a;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+  }
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-eyebrow-box {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+  .hero-scroll-indicator {
+    bottom: 1.25rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   04. Project Intro Section
+   -------------------------------------------------------------------------- */
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.intro-left-col {
+  grid-column: span 6;
+}
+
+.intro-right-col {
+  grid-column: span 6;
+  padding-top: 2.5rem;
+}
+
+@media (max-width: 992px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .intro-left-col,
+  .intro-right-col {
+    grid-column: span 1;
+    padding-top: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   05. Project Stats Highlights Section
+   -------------------------------------------------------------------------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .stat-card-responsive {
+    padding: 1.75rem 1.5rem !important;
+    min-height: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   06. Architecture Features Section
+   -------------------------------------------------------------------------- */
+.arch-features-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.arch-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.arch-image-block {
+  flex: 1 1 55%;
+  width: 100%;
+}
+
+.arch-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 480px;
+  background-color: #121217;
+  border: 1px solid rgba(197, 168, 128, 0.22);
+}
+
+.arch-text-block {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .arch-features-stack {
+    gap: 4rem;
+  }
+  .arch-feature-row {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+  .arch-image-wrapper {
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .arch-image-wrapper {
+    height: 250px;
+  }
+  .arch-feat-title {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   07. Workspace Experience Section
+   -------------------------------------------------------------------------- */
+.workspace-split-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.workspace-col60 {
+  flex: 1 1 60%;
+  width: 100%;
+}
+
+.workspace-col40 {
+  flex: 1 1 40%;
+  width: 100%;
+}
+
+.workspace-image-card {
+  position: relative;
+  height: 460px;
+  overflow: hidden;
+  background-color: #16161c;
+  border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+@media (max-width: 992px) {
+  .workspace-split-row {
+    flex-direction: column !important;
+    gap: 2.5rem;
+  }
+  .workspace-image-card {
+    height: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .workspace-image-card {
+    height: 250px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   08. Building Amenities Section
+   -------------------------------------------------------------------------- */
+.amenities-content-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.amenities-list-container {
+  grid-column: span 7;
+  display: flex;
+  flex-direction: column;
+}
+
+.amenities-image-col {
+  grid-column: span 5;
+}
+
+.amenities-sticky-container {
+  position: sticky;
+  top: 120px;
+}
+
+.amenities-image-card {
+  position: relative;
+  height: 520px;
+  background-color: #121217;
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .amenities-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .amenities-list-container,
+  .amenities-image-col {
+    grid-column: span 1;
+  }
+  .amenities-sticky-container {
+    position: static;
+    top: auto;
+    margin-top: 1.5rem;
+  }
+  .amenities-image-card {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .amenities-image-card {
+    height: 240px;
+  }
+  .amenity-row-responsive {
+    padding: 1.2rem 0.85rem !important;
+    gap: 1rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   09. Gallery & Lightbox Section
+   -------------------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-grid-card-hero {
+  grid-column: span 8;
+  grid-row: span 2;
+}
+
+.gallery-grid-card-normal {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.gallery-card-height {
+  height: 340px;
+}
+
+.lightbox-stage {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 5rem 3rem 5rem;
+}
+
+.lightbox-nav-left {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2010;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox-nav-right {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2010;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .gallery-grid-card-hero,
+  .gallery-grid-card-normal {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .gallery-card-height {
+    height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-card-height {
+    height: 240px;
+  }
+  .lightbox-stage {
+    padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+  }
+  .lightbox-nav-left {
+    left: 0.5rem;
+    width: 44px;
+    height: 44px;
+  }
+  .lightbox-nav-right {
+    right: 0.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Location & Map Section
+   -------------------------------------------------------------------------- */
+.location-map-canvas {
+  position: relative;
+  height: 560px;
+  background-color: #0c0c10;
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location-legend-bar {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(12, 12, 16, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .location-map-canvas {
+    height: 440px;
+  }
+  .location-legend-bar {
+    padding: 1rem 1.5rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .location-map-canvas {
+    height: 380px;
+  }
+  .location-legend-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+  .prime-marker-card {
+    padding: 0.6rem 0.85rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. Location Advantage Section
+   -------------------------------------------------------------------------- */
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.advantage-left-col {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.advantage-right-col {
+  grid-column: span 6;
+}
+
+.advantage-landmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .advantage-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .advantage-left-col,
+  .advantage-right-col {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .advantage-landmarks-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. Developer Section
+   -------------------------------------------------------------------------- */
+.developer-bio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.developer-bio-left {
+  grid-column: span 7;
+}
+
+.developer-bio-right {
+  grid-column: span 5;
+}
+
+.developer-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 992px) {
+  .developer-bio-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .developer-bio-left,
+  .developer-bio-right {
+    grid-column: span 1;
+  }
+  .developer-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .developer-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. Enquiry Form Section
+   -------------------------------------------------------------------------- */
+.enquiry-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.enquiry-left-col {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.enquiry-right-col {
+  grid-column: span 7;
+}
+
+.enquiry-row-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Mobile font-size minimum 16px to eliminate iOS forced zoom on focus */
+.enquiry-input-field,
+.enquiry-textarea-field {
+  font-size: 1rem !important;
+}
+
+@media (max-width: 992px) {
+  .enquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .enquiry-left-col,
+  .enquiry-right-col {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .enquiry-row-two {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .enquiry-form-card {
+    padding: 2rem 1.25rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. Footer Section
+   -------------------------------------------------------------------------- */
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem;
+}
+
+.footer-grid-col-big {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-grid-col {
+  grid-column: span 2.66;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .footer-grid-col-big {
+    grid-column: span 2;
+  }
+  .footer-grid-col {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-grid-col-big,
+  .footer-grid-col {
+    grid-column: span 1;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. Admin Console Dashboard Responsive
+   -------------------------------------------------------------------------- */
+.admin-dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.admin-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #101015;
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  padding: 0.6rem 1rem;
+  min-width: 320px;
+}
+
+@media (max-width: 992px) {
+  .admin-metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .admin-metrics-row {
+    grid-template-columns: 1fr;
+  }
+  .admin-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .admin-search-box {
+    min-width: 100%;
+    width: 100%;
+  }
+}

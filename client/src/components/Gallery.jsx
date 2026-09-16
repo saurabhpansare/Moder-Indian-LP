@@ -60,7 +60,7 @@ const Gallery = () => {
         </motion.div>
 
         {/* Editorial Asymmetric Grid */}
-        <div style={styles.galleryGrid}>
+        <div className="gallery-grid" style={styles.galleryGrid}>
           {galleryItems.map((item, idx) => {
             const isHero = idx === 0;
 
@@ -73,11 +73,8 @@ const Gallery = () => {
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
                 whileHover={{ scale: 1.02 }}
                 onClick={() => openLightbox(idx)}
-                style={{
-                  ...styles.gridCard,
-                  gridColumn: isHero ? 'span 8' : item.aspect === 'tall' ? 'span 4' : 'span 4',
-                  gridRow: isHero ? 'span 2' : 'span 1',
-                }}
+                className={isHero ? "gallery-grid-card-hero gallery-card-height" : "gallery-grid-card-normal gallery-card-height"}
+                style={styles.gridCard}
               >
                 <img src={item.src} alt={item.title} style={styles.cardImage} loading="lazy" />
                 <div style={styles.cardOverlay}>
@@ -119,17 +116,17 @@ const Gallery = () => {
             </div>
 
             {/* Previous Button */}
-            <button onClick={prevImage} style={styles.navBtnLeft} aria-label="Previous Image">
+            <button onClick={prevImage} className="lightbox-nav-left" style={styles.navBtnLeft} aria-label="Previous Image">
               <ChevronLeft size={36} color="#c5a880" />
             </button>
 
             {/* Next Button */}
-            <button onClick={nextImage} style={styles.navBtnRight} aria-label="Next Image">
+            <button onClick={nextImage} className="lightbox-nav-right" style={styles.navBtnRight} aria-label="Next Image">
               <ChevronRight size={36} color="#c5a880" />
             </button>
 
             {/* Main Lightbox Image Stage */}
-            <div style={styles.lightboxStage} onClick={closeLightbox}>
+            <div className="lightbox-stage" style={styles.lightboxStage} onClick={closeLightbox}>
               <motion.div
                 key={lightboxIndex}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -173,19 +170,9 @@ const styles = {
     color: '#f4f1ea',
   },
   galleryGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gap: '1.5rem',
-    '@media (maxWidth: 992px)': {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-    },
-    '@media (maxWidth: 640px)': {
-      gridTemplateColumns: '1fr',
-    },
   },
   gridCard: {
     position: 'relative',
-    height: '340px',
     backgroundColor: '#121217',
     border: '1px solid rgba(255, 255, 255, 0.08)',
     overflow: 'hidden',

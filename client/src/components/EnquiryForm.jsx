@@ -78,13 +78,14 @@ const EnquiryForm = () => {
   return (
     <section id="enquire" style={styles.section}>
       <div className="container">
-        <div style={styles.grid}>
+        <div className="enquiry-grid" style={styles.grid}>
           {/* LEFT: Info & Editorial Subtext */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="enquiry-left-col"
             style={styles.leftCol}
           >
             <span className="subheading-gold">ENQUIRE ABOUT MODERN SUITES</span>
@@ -115,9 +116,10 @@ const EnquiryForm = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="enquiry-right-col"
             style={styles.rightCol}
           >
-            <div style={styles.formCard}>
+            <div className="enquiry-form-card" style={styles.formCard}>
               <AnimatePresence mode="wait">
                 {success ? (
                   <motion.div
@@ -149,7 +151,7 @@ const EnquiryForm = () => {
                       </div>
                     )}
 
-                    <div style={styles.rowTwo}>
+                    <div className="enquiry-row-two" style={styles.rowTwo}>
                       <div style={styles.fieldGroup}>
                         <label style={styles.label}>FIRST NAME *</label>
                         <input
@@ -158,6 +160,7 @@ const EnquiryForm = () => {
                           value={formData.firstName}
                           onChange={handleChange}
                           placeholder="John"
+                          className="enquiry-input-field"
                           style={{
                             ...styles.input,
                             borderColor: errors.firstName ? '#e53e3e' : 'rgba(255, 255, 255, 0.12)',
@@ -174,6 +177,7 @@ const EnquiryForm = () => {
                           value={formData.lastName}
                           onChange={handleChange}
                           placeholder="Doe"
+                          className="enquiry-input-field"
                           style={{
                             ...styles.input,
                             borderColor: errors.lastName ? '#e53e3e' : 'rgba(255, 255, 255, 0.12)',
@@ -183,7 +187,7 @@ const EnquiryForm = () => {
                       </div>
                     </div>
 
-                    <div style={styles.rowTwo}>
+                    <div className="enquiry-row-two" style={styles.rowTwo}>
                       <div style={styles.fieldGroup}>
                         <label style={styles.label}>EMAIL ADDRESS *</label>
                         <input
@@ -192,6 +196,7 @@ const EnquiryForm = () => {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@company.com"
+                          className="enquiry-input-field"
                           style={{
                             ...styles.input,
                             borderColor: errors.email ? '#e53e3e' : 'rgba(255, 255, 255, 0.12)',
@@ -208,6 +213,7 @@ const EnquiryForm = () => {
                           value={formData.mobile}
                           onChange={handleChange}
                           placeholder="+91 98765 43210"
+                          className="enquiry-input-field"
                           style={{
                             ...styles.input,
                             borderColor: errors.mobile ? '#e53e3e' : 'rgba(255, 255, 255, 0.12)',
@@ -225,6 +231,7 @@ const EnquiryForm = () => {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Enterprise Ltd."
+                        className="enquiry-input-field"
                         style={styles.input}
                       />
                     </div>
@@ -237,6 +244,7 @@ const EnquiryForm = () => {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Please share details regarding required floor plate area..."
+                        className="enquiry-textarea-field"
                         style={{
                           ...styles.textarea,
                           borderColor: errors.message ? '#e53e3e' : 'rgba(255, 255, 255, 0.12)',
@@ -281,25 +289,14 @@ const styles = {
     borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
   },
   grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gap: '4rem',
     alignItems: 'start',
   },
   leftCol: {
-    gridColumn: 'span 5',
     display: 'flex',
     flexDirection: 'column',
     gap: '1.75rem',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   rightCol: {
-    gridColumn: 'span 7',
-    '@media (maxWidth: 992px)': {
-      gridColumn: 'span 12',
-    },
   },
   title: {
     color: '#f4f1ea',
@@ -342,12 +339,6 @@ const styles = {
     gap: '1.75rem',
   },
   rowTwo: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '1.5rem',
-    '@media (maxWidth: 640px)': {
-      gridTemplateColumns: '1fr',
-    },
   },
   fieldGroup: {
     display: 'flex',
